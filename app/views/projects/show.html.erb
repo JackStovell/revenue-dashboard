@@ -1,0 +1,55 @@
+
+        
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Project stats</h1>
+            <table class="table table-striped"> 
+  <p id="notice"><%= notice %></p>
+<p>
+  <strong>Client:</strong>
+  <%= @project.client %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @project.owner %>
+</p>
+
+<p>
+  <strong>Business Unit:</strong>
+  <%= @project.businessUnit %>
+</p>
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Jobnumber:</strong>
+  <%= @project.jobNumber %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @project.status %>
+</p>
+
+<p>
+  <strong>Billing:</strong>
+  <%= @project.billing %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @project.cost %>
+</p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @project.billing - @project.cost %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
