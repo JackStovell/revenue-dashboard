@@ -3,15 +3,28 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   
   
+  
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    
+  
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+  end
+  
+  def showbrand
+    @projects = Project.all.where(businessUnit: "Brand")
+    
+  end
+  
+  def showdigital
+    @projects = Project.all.where(businessUnit: "Digital")
+    @digitotal = Project.all.where(businessUnit: "Digital")
   end
 
   # GET /projects/new

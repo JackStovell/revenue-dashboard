@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :billing
       t.integer :cost
       t.integer :income
+      t.references :client
 
       t.timestamps null: false
     end
