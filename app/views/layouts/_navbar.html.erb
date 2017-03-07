@@ -5,11 +5,20 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href=""> <span class="sr-only">(current)</span></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-          </ul>
+            <li><a href="/">All Clients<span class="sr-only">(current)</span></a></li>
+            <li><a href="/">Brand<span class="sr-only">(current)</span></a></li>
+            <li><a href="/">Digi<span class="sr-only">(current)</span></a></li>
+            <li><%= link_to 'New Client', new_client_path %></li>
+              
+             <li></li> 
+              
+             </ul>
+             <h3>Clients</h3>
+             <% @clients.each do |client| %>
+            <li><a href="/"><%= client.clientName %></a></li>
+           
+         
+          <% end %>
           <ul class="nav nav-sidebar">
             <li><a href=""></a></li>
             <li><a href=""></a></li>
