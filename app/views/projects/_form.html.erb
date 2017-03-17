@@ -12,11 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :Client %><br>
+    
+    <%= f.select :client, options_for_select(Client.ids) %>
+    <%= Client.ids %>
+  </div>
+  <div class="field">
+    <%= f.label :Job_Name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :jobNumber %><br>
+    <%= f.label :Job_Number %><br>
     <%= f.text_field :jobNumber %>
   </div>
   <div class="field">

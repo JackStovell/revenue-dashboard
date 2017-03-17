@@ -4,21 +4,6 @@
           <h1 class="page-header">Project stats</h1>
             <table class="table table-striped"> 
   <p id="notice"><%= notice %></p>
-<p>
-  <strong>Client:</strong>
-  <%= @project.client %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @project.owner %>
-</p>
-
-<p>
-  <strong>Business Unit:</strong>
-  <%= @project.businessUnit %>
-</p>
-
 
 
 <p>
@@ -27,7 +12,7 @@
 </p>
 
 <p>
-  <strong>Jobnumber:</strong>
+  <strong>Job Number:</strong>
   <%= @project.jobNumber %>
 </p>
 
@@ -48,7 +33,7 @@
 
 <p>
   <strong>Income:</strong>
-  <%= @project.billing - @project.cost %>
+  <%= @project.income %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

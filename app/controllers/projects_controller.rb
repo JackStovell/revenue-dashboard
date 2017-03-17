@@ -8,33 +8,30 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-    
+    @clientnav = Client.all
   
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project = Project.find(params[:id])
+    @clientnav = Client.all
   end
   
-  def showbrand
-    @projects = Project.all.where(businessUnit: "Brand")
-    
-  end
-  
-  def showdigital
-    @projects = Project.all.where(businessUnit: "Digital")
-    @digitotal = Project.all.where(businessUnit: "Digital")
-  end
+
 
   # GET /projects/new
   def new
     @project = Project.new
-    
+    @client = Client.all
+    @clientnav = Client.all
   end
 
   # GET /projects/1/edit
   def edit
+     @clientnav = Client.all
+     @client = Client.all
   end
 
   # POST /projects
@@ -51,6 +48,7 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
+     @clientnav = Client.all
   end
 
   # PATCH/PUT /projects/1
@@ -65,6 +63,7 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
+    @clientnav = Client.all
   end
 
   # DELETE /projects/1
@@ -75,6 +74,7 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
+    @clientnav = Client.all
   end
   
   def income
@@ -89,6 +89,8 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:client, :owner, :businessUnit, :name, :jobNumber, :status, :billing, :cost, :income)
+      params.require(:project).permit(:id, :name, :jobNumber, :status, :billing, :cost, :income)
     end
+    
+    
 end

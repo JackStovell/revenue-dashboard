@@ -14,13 +14,14 @@
               
              </ul>
              <h3>Clients</h3>
-             <% @clients.each do |client| %>
-            <li><a href="/"><%= client.clientName %></a></li>
+             <% @clientnav.each do |client| %>
+            <li><a href="/clients" & <%= client.id %>><%= client.clientName %></a></li>
            
          
           <% end %>
           <ul class="nav nav-sidebar">
-            <li><a href=""></a></li>
+            
+            <li><a href="/projects/">Project Browser</a></li>
             <li><a href=""></a></li>
             <li><a href=""></a></li>
             <li><a href=""></a></li>
